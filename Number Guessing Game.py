@@ -1,6 +1,10 @@
-#Number Guessing Game
-#Mauricio Garcia
-# This is a game that helps u guess a random number
+# Number Guessing Game
+# Mauricio Garcia
+# A simple terminal-based game where the player selects a difficulty level and tries to guess a randomly generated number.
+# The difficulty determines the range of possible numbers, while the game provides hints after each incorrect guess.
+# This project was a good exercise for practicing functions, loops, user input validation, conditionals, and Python's random module.
+
+
 import random
 
 def establishingCaseScenarios(difficultySelected):
@@ -36,7 +40,8 @@ while difficultySelected is False:
     if difficulty_select in difficultiesList:
         difficultySelected = True
     else:
-        print("Please choose between a number between 0 and 3")
+        print("Please choose between a number between 0 and 4")
+        
         
    
 
@@ -45,19 +50,25 @@ secretNumber = establishingCaseScenarios(difficulty_select)
 #print(f"Secret number is: {secretNumber}")
 
 guessed = False
+
+
+
 while guessed is False:
     attempts += 1
     print("Guess!")
+    try:
+        yourNumber = int(input())
+        if yourNumber < 0:
+            print("Positive numbers only")
+            continue
 
-    yourNumber = int(input())
+    except ValueError:
+        print("Please enter a number, not a letter or a decimal.")
+        continue
     if yourNumber == secretNumber:
-        
         print("Congratulations, u right!\n Attempts:", attempts)
         guessed = True
-        
     elif yourNumber < secretNumber:
         print("Too low, try higher")
     else:
         print("too high, try lower")
-        
-        
