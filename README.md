@@ -59,13 +59,5 @@ This project helped me practice:
 - Working with loops and conditionals
 - Generating random numbers
 - Designing a simple interactive command-line application
-
-## Future Improvements
-
-- Limit the number of attempts
-- Add difficulty descriptions and scoring
-- Allow the player to play multiple rounds
-- Display statistics across games
-- Implement a leaderboard
-- Add input validation for non-numeric guesses
+ 
 
